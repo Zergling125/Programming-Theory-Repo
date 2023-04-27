@@ -60,7 +60,7 @@ public class Main : MonoBehaviour
                 end = "ns";
             }
             failText.gameObject.SetActive(true);
-            failText.text = "You have answered " + qNum + " questio" + end + " wrong. Revise tutorials and try again";
+            failText.text = "You have answered " + qNum + " questio" + end + " wrong.";
         }
     }
 
@@ -131,6 +131,11 @@ public class Main : MonoBehaviour
             errorText.text = "Name should contain less than 15 characters";
             errorText.gameObject.SetActive(true);
         }
+        else if (enterName.text.Length == 0)
+        {
+            errorText.text = "Please, enter your name";
+            errorText.gameObject.SetActive(true);
+        }
         else
         {
             name = enterName.text;
@@ -139,6 +144,7 @@ public class Main : MonoBehaviour
 
             if (errorText.gameObject.activeSelf == true)
                 errorText.gameObject.SetActive(false);
+
         }
     }
 
@@ -165,11 +171,14 @@ public class Main : MonoBehaviour
 
     void SetUpName()
     {
-        welcomeText.text = "Welcome " + name;
-        welcomeText.gameObject.SetActive(true);
-        renameButton.gameObject.SetActive(true);
-        enterName.gameObject.SetActive(false);
-        nameButton.gameObject.SetActive(false);
+        if(name != "name")
+        {
+            welcomeText.text = "Welcome " + name;
+            welcomeText.gameObject.SetActive(true);
+            renameButton.gameObject.SetActive(true);
+            enterName.gameObject.SetActive(false);
+            nameButton.gameObject.SetActive(false);
+        }
     }
     void SetUpButtons()
     {

@@ -6,7 +6,7 @@ public class StartButton : MonoBehaviour
 {
     [SerializeField] GameObject screenToEnable;
     [SerializeField] GameObject screenToDisable;
-    private Main main;
+    protected Main main;
 
     public virtual void SetScreen()
     {

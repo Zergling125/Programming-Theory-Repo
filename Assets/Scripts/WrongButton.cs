@@ -6,7 +6,6 @@ using UnityEngine;
 public class WrongButton : RightButton
 {
     [SerializeField] Button button;
-    private Main main;
 
    
     private void Start()
